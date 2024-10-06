@@ -4,5 +4,7 @@ app = FastAPI()
 
 
 @app.get("/hi/{who}")  # path decorator
-def greet(who: str):  # path function
-    return f"hello {who}"
+def greet(
+    who: str, word: str
+):  # path function, こっちだけに定義するとクエリパラメータになる
+    return f"{word} {who}"
