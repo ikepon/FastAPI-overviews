@@ -18,6 +18,10 @@ uv add uvicorn
 - アプリケーション起動
 
 ```
+# main.py を直接実行する場合
+python src/main.py
+
+# uvicorn を使って起動する場合
 uvicorn hello:app --reload
 ```
 

@@ -1,8 +1,10 @@
 import os
 
 from fastapi import FastAPI
+from web import explorer  # 分けた router をインポート
 
 app = FastAPI()
+app.include_router(explorer.router)  # 分けた router を追加
 
 # TODO: ログの設定を調整する
 LOGGING_CONFIG = {
