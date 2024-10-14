@@ -240,6 +240,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "httpie" },
     { name = "httpx" },
+    { name = "pydantic" },
     { name = "requests" },
     { name = "uvicorn" },
 ]
@@ -249,6 +250,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.115.0" },
     { name = "httpie", specifier = ">=3.2.3" },
     { name = "httpx", specifier = ">=0.27.2" },
+    { name = "pydantic", specifier = ">=2.9.2" },
     { name = "requests", specifier = ">=2.31.0" },
     { name = "uvicorn", specifier = ">=0.31.0" },
 ]

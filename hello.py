@@ -1,4 +1,7 @@
-from fastapi import FastAPI, Body, Header
+from fastapi import FastAPI, Body, Depends, Header, Query
+import asyncio
+import uvicorn
+from data import get_creatures
 
 app = FastAPI()
 
@@ -18,3 +21,23 @@ def greet_post(who: str = Body(embed=True)):
 @app.post("/hi/header")
 def greet_query(who: str = Header()):
     return f"hello {who}: header"
+
+
+@app.get("/creatures")
+def get_creature():
+    return get_creatures()
+
+
+@app.get("/async")
+async def async_endpoint():
+    await asyncio.sleep(1)
+    return {"message": "Hello, World!"}
+
+
+def user_dep(name: str = Query(), password: str = Query()):
+    return {"name": name, "valid": True}
+
+
+@app.get("/user")
+def get_user(user: dict = Depends(user_dep)) -> dict:
+    return user
