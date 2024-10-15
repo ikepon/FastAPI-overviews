@@ -1,11 +1,11 @@
 import os
 
 from fastapi import FastAPI
-from web import explorer  # 分けた router をインポート
+from web import explorer, creature  # 分けた router をインポート
 
 app = FastAPI()
 app.include_router(explorer.router)  # 分けた router を追加
-
+app.include_router(creature.router)  # 分けた router を追加
 # TODO: ログの設定を調整する
 LOGGING_CONFIG = {
     "version": 1,
