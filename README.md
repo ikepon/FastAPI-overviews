@@ -39,3 +39,6 @@ http://127.0.0.1:8000/hi
   - data は DB や外部データに接続する
   - service は data を加工して web に返す
   - web は service からデータを受けてブラウザに返す
+
+- Authentication
+  - ユーザーが誰か

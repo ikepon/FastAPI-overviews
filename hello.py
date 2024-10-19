@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Body, Depends, Header, Query
 import asyncio
 import uvicorn
-from data import get_creatures
+from _data import get_creatures
 
 app = FastAPI()
 
