@@ -1,9 +1,21 @@
 import os
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from web import explorer, creature, auth, user  # 分けた router をインポート
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*"
+    ],  # NOTE: ここに URL("http://localhost:3000"とか) を指定すると、その URL からのリクエストのみ許可することができる
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(explorer.router)  # 分けた router を追加
 app.include_router(creature.router)  # 分けた router を追加
 app.include_router(auth.router)  # 分けた router を追加
