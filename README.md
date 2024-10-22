@@ -40,5 +40,10 @@ http://127.0.0.1:8000/hi
   - service は data を加工して web に返す
   - web は service からデータを受けてブラウザに返す
 
+- model
+  - table のカラムの型と対応
+  - validation もここに書くと思う
+  - Rails の AR に近い感じだと思う
+
 - Authentication
   - ユーザーが誰か
